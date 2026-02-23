@@ -1,0 +1,19 @@
+body{
+    background-color: #F4F6F8;
+}
+/* header part  */
+
+
+
+.card-header{
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #ffffff;
+    
+}
+.card-header .card-title{
+    font-size: 14px;
+    color: rgb(87, 86, 86);
+    margin-bottom: 8px;
+    font-weight: 500px;
+}

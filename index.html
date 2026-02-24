@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Job Tracker(A-4)</title>
     <!-- font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,150 +24,199 @@
      </head>
 <body class="bg-white-400">
       <header class="mx-auto w-[80%] space-y-2">
-            <h2 class="text-2xl text-[#002C5C] font-bold whitespace-nowrap">Job Application Tracker</h2>
+        <!-- heading tag  -->
+            <h2 class="text-2xl text-[#002C5C] font-bold whitespace-nowrap">
+               Job Application Tracker
+            </h2>
+
+        <!-- heading 3 card  -->
             <div class="grid grid-cols-3 gap-[16px] text-gray-300 mb-[30px]">
                 <div class="card-header">
                     <p class="card-title">Total</p>
-                    <p class="text-[#002C5C] font-bold text-xl">8</p>
+                    <p id="totalCount" class=" text-[#002C5C] font-bold text-xl">0</p>
                 </div>
                 <div class="card-header">
                     <p class="card-title">Interview</p>
-                    <p class="text-[#10B981] font-bold text-xl">0</p>
+                    <p id="interviewCount" class="text-[#10B981] font-bold text-xl">0</p>
                 </div>
                 <div class="card-header">
                     <p class="card-title">Rejected</p>
-                    <p class="text-[#EF4444] font-bold text-xl">0</p>
+                    <p id="rejectCount" class="text-[#EF4444] font-bold text-xl">0</p>
                 </div>
             </div>
       </header>
       <hr class= "text-gray-300 mb-[20px]">
-<<<<<<< HEAD
-      <main>
-        <!-- nav + 3 btn  -->
-        <section>
-            <h3></h3>
-            <div class="">
-                <button></button>
-                <button></button>
-                <button></button>
+      <main id="main">
+        <!-- nav  -->
+        <section class="mx-auto w-[80%] space-y-2 flex justify-between">
+            <div class="nav-left">
+                 <h3 class="font-bold">Available Jobs 8 jobs</h3>
+        <!-- nav 3 button  -->
+             <div class="my-4">
+                <button onclick="toggle('all-nav')" id="all-nav" class="btn bg-blue-400 text-[#fffd]">All</button>
+                <button onclick="toggle('interview-nav')" id="interview-nav" class="btn">Interview</button>
+               
+                <button onclick="toggle('reject-nav')" id="reject-nav" class="btn">Rejected</button>
+             </div>
+        
+            </div>
+        <!-- nav right part  -->
+            <div class="nav-right flex gap-1">
+                <p id="totalCountLower">0</p>
+                <p>jobs</p>
             </div>
         </section>
+        <!-- filter section  -->
+              <section id="filter" class=" hidden w-[80%]  mx-auto space-y-3">
+                    <div class="text-center justify-center items-center h-[400px] bg-white">
+                        <img class="my-2 max-w-[100px] mx-auto" src="jobs.png" alt="">
+                        <h3>No jobs available</h3>
+                        <p>Check back soon for new job opportunities</p>
+                    </div>
+                </section>
         <!-- all cards  -->
-        <section class="job-cards mx-auto w-[80%] space-y-4">
-            <div class="card p-8 bg-[#ffffff]">
+        <section id="job-cards" class="mx-auto w-[80%] space-y-4">
+<!-- card 1  -->
+            <div class="job-card-body p-8 bg-[#ffffff] flex justify-between">
                 <div class="card_left">
-                  <h3>Mobile First Corp</h3>
-                  <p>React Native Developer</p><br>
-                  <p>Remote • Full-time • $130,000 - $175,000
+                  <h3 class="title">Mobile First Corp</h3>
+                  <p class="prof">React Native Developer</p><br>
+                  <p class="salary">Remote • Full-time • $130,000 - $175,000
                   </p><br>
-                  <button class="btn">NOT APPLIED</button>
-                  <p>Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                  <button class="btn apply">NOT APPLIED</button>
+                  <p class="detail">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
                  <div class="">
-                    <button class="btn btn-outline btn-accent">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary">REJECTED</button>
+                    <button class="interviewBtn btn btn-outline btn-accent">INTERVIEW</button>
+                    <button class="rejectBtn btn btn-outline btn-secondary">REJECTED</button>
                  </div>
                 </div>
-                <div class="card-right"></div>
-            </div>         
-            <div class="card p-8 bg-[#ffffff]">
+                <div class="card-right">
+                    <i class="delete fa-solid fa-trash-can cursor-pointer btn bg-transparent border-none"></i>
+                </div>
+            </div>    
+<!-- card 2    -->
+            <div class="job-card-body p-8 bg-[#ffffff] flex justify-between">
                 <div class="card_left">
-                  <h3>WebFlow Agency</h3>
-                  <p>Web Designer & Developer</p><br>
-                  <p>Los Angeles, CA • Part-time • $80,000 - $120,000</p><br>
-                  <button class="btn">NOT APPLIED</button>
-                  <p>Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+                  <h3 class="title">WebFlow Agency</h3>
+                  <p class="prof">Web Designer & Developer</p><br>
+                  <p class="salary">Los Angeles, CA • Part-time • $80,000 - $120,000</p><br>
+                  <button class="btn apply">NOT APPLIED</button>
+                  <p class="detail">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
                  <div class="">
-                    <button class="btn btn-outline btn-accent">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary">REJECTED</button>
+                    <button class="interviewBtn btn btn-outline btn-accent">INTERVIEW</button>
+                    <button class="rejectBtn btn btn-outline btn-secondary">REJECTED</button>
                  </div>
                 </div>
-                <div class="card-right"></div>
-            </div>         
-            <div class="card p-8 bg-[#ffffff]">
+                <div class="card-right">
+                    <i class="delete fa-solid fa-trash-can cursor-pointer btn bg-transparent border-none"></i>
+                </div>
+            </div>   
+<!-- card 3        -->
+            <div class="job-card-body p-8 bg-[#ffffff] flex justify-between">
                 <div class="card_left">
-                  <h3>DataViz Solutions</h3>
-                  <p>Data Visualization Specialist</p><br>
-                  <p>Boston, MA • Full-time • $125,000 - $165,000</p><br>
-                  <button class="btn">NOT APPLIED</button>
-                  <p>Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+                  <h3 class="title">DataViz Solutions</h3>
+                  <p class="prof">Data Visualization Specialist</p><br>
+                  <p class="salary">Boston, MA • Full-time • $125,000 - $165,000</p><br>
+                  <button class="btn apply">NOT APPLIED</button>
+                  <p class="detail">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
                  <div class="">
-                    <button class="btn btn-outline btn-accent">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary">REJECTED</button>
+                    <button class="interviewBtn btn btn-outline btn-accent">INTERVIEW</button>
+                    <button class="rejectBtn btn btn-outline btn-secondary">REJECTED</button>
                  </div>
                 </div>
-                <div class="card-right"></div>
-            </div>         
-            <div class="card p-8 bg-[#ffffff]">
+                <div class="card-right">
+                    <i class="delete fa-solid fa-trash-can cursor-pointer btn bg-transparent border-none"></i>
+                </div>
+            </div>    
+<!-- card 4       -->
+            <div class="job-card-body p-8 bg-[#ffffff] flex justify-between">
                 <div class="card_left">
-                  <h3>CloudFirst Inc</h3>
-                  <p>Backend Developer</p><br>
-                  <p>Seattle, WA • Full-time • $140,000 - $190,000</p><br>
-                  <button class="btn">NOT APPLIED</button>
-                  <p>Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+                  <h3 class="title">CloudFirst Inc</h3>
+                  <p class="prof">Backend Developer</p><br>
+                  <p class="salary">Seattle, WA • Full-time • $140,000 - $190,000</p><br>
+                  <button class="btn apply">NOT APPLIED</button>
+                  <p class="detail">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
                  <div class="">
-                    <button class="btn btn-outline btn-accent">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary">REJECTED</button>
+                    <button class="interviewBtn btn btn-outline btn-accent">INTERVIEW</button>
+                    <button class="rejectBtn btn btn-outline btn-secondary">REJECTED</button>
                  </div>
                 </div>
-                <div class="card-right"></div>
-            </div>         
-            <div class="card p-8 bg-[#ffffff]">
+                <div class="card-right">
+                    <i class="delete fa-solid fa-trash-can cursor-pointer btn bg-transparent border-none"></i>
+                </div>
+            </div>      
+<!-- card 5     -->
+            <div class="job-card-body p-8 bg-[#ffffff] flex justify-between">
                 <div class="card_left">
-                  <h3>Innovation Labs</h3>
-                  <p>UI/UX Engineer</p><br>
-                  <p>Austin, TX • Full-time • $110,000 - $150,000</p><br>
-                  <button class="btn">NOT APPLIED</button>
-                  <p>Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+                  <h3 class="title">Innovation Labs</h3>
+                  <p class="prof">UI/UX Engineer</p><br>
+                  <p class="salary">Austin, TX • Full-time • $110,000 - $150,000</p><br>
+                  <button class="btn apply">NOT APPLIED</button>
+                  <p  class="detail">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
                  <div class="">
-                    <button class="btn btn-outline btn-accent">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary">REJECTED</button>
+                    <button class="interviewBtn btn btn-outline btn-accent">INTERVIEW</button>
+                    <button class="rejectBtn btn btn-outline btn-secondary">REJECTED</button>
                  </div>
                 </div>
-                <div class="card-right"></div>
-            </div>         
-            <div class="card p-8 bg-[#ffffff]">
+                <div class="card-right">
+                    <i class="delete fa-solid fa-trash-can cursor-pointer btn bg-transparent border-none"></i>
+                </div>
+            </div>      
+<!-- card 6     -->
+            <div class="job-card-body p-8 bg-[#ffffff] flex justify-between">
                 <div class="card_left">
-                  <h3>MegaCorp Solutions</h3>
-                  <p>JavaScript Developer</p><br>
-                  <p>New York, NY • Full-time • $130,000 - $170,00</p><br>
-                  <button class="btn">NOT APPLIED</button>
-                  <p>Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
+                  <h3 class="title">MegaCorp Solutions</h3>
+                  <p class="prof">JavaScript Developer</p><br>
+                  <p class="salary">New York, NY • Full-time • $130,000 - $170,00</p><br>
+                  <button class="btn apply">NOT APPLIED</button>
+                  <p class="detail">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
                  <div class="">
-                    <button class="btn btn-outline btn-accent">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary">REJECTED</button>
+                    <button class="interviewBtn btn btn-outline btn-accent">INTERVIEW</button>
+                    <button class="rejectBtn btn btn-outline btn-secondary">REJECTED</button>
                  </div>
                 </div>
-                <div class="card-right"></div>
-            </div>         
-            <div class="card p-8 bg-[#ffffff]">
+                <div class="card-right">
+                    <i class="delete fa-solid fa-trash-can cursor-pointer btn bg-transparent border-none"></i>
+                </div>
+            </div>       
+<!-- card 7    -->
+            <div class="job-card-body p-8 bg-[#ffffff] flex justify-between">
                 <div class="card_left">
-                  <h3>StartupXYZ</h3>
-                  <p>Full Stack Engineer</p><br>
-                  <p>Remote • Full-time • $120,000 - $160,000</p><br>
-                  <button class="btn">NOT APPLIED</button>
-                  <p>Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
+                  <h3 class="title">StartupXYZ</h3>
+                  <p class="prof">Full Stack Engineer</p><br>
+                  <p class="salary">Remote • Full-time • $120,000 - $160,000</p><br>
+                  <button class="btn apply">NOT APPLIED</button>
+                  <p class="detail">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
                  <div class="">
-                    <button class="btn btn-outline btn-accent">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary">REJECTED</button>
+                    <button class="interviewBtn btn btn-outline btn-accent">INTERVIEW</button>
+                    <button class="rejectBtn btn btn-outline btn-secondary">REJECTED</button>
                  </div>
                 </div>
-                <div class="card-right"></div>
-            </div>         
-            <div class="card p-8 bg-[#ffffff]">
+                <div class="card-right">
+                    <i class="delete fa-solid fa-trash-can cursor-pointer btn bg-transparent border-none"></i>
+                </div>
+            </div>       
+<!-- card 8    -->
+            <div class="job-card-body p-8 bg-[#ffffff] flex justify-between">
                 <div class="card_left">
-                  <h3>TechCorp Industries</h3>
-                  <p>Senior Fronted Developer</p><br>
-                  <p>San Francisco, CA • Full-time • $130,000 - $175,000</p><br>
-                  <button class="btn">NOT APPLIED</button>
-                  <p>We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
+                  <h3 class="title">TechCorp Industries</h3>
+                  <p class="prof">Senior Fronted Developer</p><br>
+                  <p class="salary">San Francisco, CA • Full-time • $130,000 - $175,000</p><br>
+                  <button class="btn apply">NOT APPLIED</button>
+                  <p class="detail">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
                  <div class="">
-                    <button class="btn btn-outline btn-accent">INTERVIEW</button>
-                    <button class="btn btn-outline btn-secondary">REJECTED</button>
+                    <button class="interviewBtn btn btn-outline btn-accent">INTERVIEW</button>
+                    <button class="rejectBtn btn btn-outline btn-secondary">REJECTED</button>
                  </div>
                 </div>
-                <div class="card-right"></div>
+                <div class="card-right">
+                    <i class="delete fa-solid fa-trash-can cursor-pointer btn bg-transparent border-none"></i>
+                </div>
             </div>         
         </section>
       </main>
+
+      <!-- js added  -->
+       <script src="script/script.js"></script>
 </body>
 </html>

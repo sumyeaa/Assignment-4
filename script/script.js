@@ -13,6 +13,7 @@ function calculateTotalCount(){
     totalCount.innerText = jobCards.children.length;
     interviewCount.innerText = interviewList.length;
     rejectCount.innerText = rejectList.length; 
+    totalCountLower.innerText = jobCards.children.length
 }
 calculateTotalCount()
 
@@ -110,10 +111,14 @@ main.addEventListener('click',function(event)
         }
            rejectList = rejectList.filter(item => item.title !== title)
         calculateTotalCount()
-        renderinterview()
+        
         if(interviewNav.classList.contains('bg-blue-400'))
         {
-        totalCountLower.innerText = interviewList.length
+            renderinterview()
+            totalCountLower.innerText = interviewList.length
+        }
+        else{
+            totalCountLower.innerText = jobCards.children.length
         }
     }
 //for reject nav filter
@@ -143,10 +148,14 @@ main.addEventListener('click',function(event)
         }
            interviewList = interviewList.filter(item => item.title !== title)
         calculateTotalCount()
-        renderreject()
+       
         if(rejectNav.classList.contains('bg-blue-400'))
         {
-        totalCountLower.innerText = rejectList.length
+             renderreject()
+             totalCountLower.innerText = rejectList.length
+        }
+        else{
+            totalCountLower.innerText = jobCards.children.length
         }
     }
 //for delete
@@ -188,7 +197,7 @@ function renderinterview()
 
         if (interviewList.length === 0) {
          filter.innerHTML = `
-             <div class="text-center justify-center items-center h-[400px] bg-white">
+             <div class="text-center flex flex-col justify-center items-center h-[400px] bg-white">
                  <img class="my-2 max-w-[100px] mx-auto" src="jobs.png" alt="">
                  <h3>No jobs available</h3>
                  <p>Check back soon for new job opportunities</p>
@@ -232,7 +241,7 @@ function renderreject()
 
         if (rejectList.length === 0) {
          filter.innerHTML = `
-             <div class="text-center  justify-center items-center h-[400px] bg-white">
+             <div class="text-center flex flex-col justify-center items-center h-[400px] bg-white">
                  <img class="my-2 max-w-[100px] mx-auto" src="jobs.png" alt="">
                  <h3>No jobs available</h3>
                  <p>Check back soon for new job opportunities</p>
